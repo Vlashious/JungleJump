@@ -1,0 +1,9 @@
+/home/uladzimir/Workspace/JungleJump/.mono/temp/bin/Debug/Jungle Jump.deps.json
+/home/uladzimir/Workspace/JungleJump/.mono/temp/bin/Debug/Jungle Jump.dll
+/home/uladzimir/Workspace/JungleJump/.mono/temp/bin/Debug/Jungle Jump.pdb
+/home/uladzimir/Workspace/JungleJump/.mono/temp/obj/Debug/Jungle Jump.csprojAssemblyReference.cache
+/home/uladzimir/Workspace/JungleJump/.mono/temp/obj/Debug/Jungle Jump.AssemblyInfoInputs.cache
+/home/uladzimir/Workspace/JungleJump/.mono/temp/obj/Debug/Jungle Jump.AssemblyInfo.cs
+/home/uladzimir/Workspace/JungleJump/.mono/temp/obj/Debug/Jungle Jump.csproj.CoreCompileInputs.cache
+/home/uladzimir/Workspace/JungleJump/.mono/temp/obj/Debug/Jungle Jump.dll
+/home/uladzimir/Workspace/JungleJump/.mono/temp/obj/Debug/Jungle Jump.pdb

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "Jungle Jump/1.0.0": {
+        "runtime": {
+          "Jungle Jump.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Jungle Jump/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
