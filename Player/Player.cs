@@ -3,6 +3,8 @@ using System;
 
 public class Player : KinematicBody2D
 {
+    [Signal] private delegate void LifeChanged(int life);
+    [Signal] private delegate void Dead();
     [Export] private readonly int _runSpeed;
     [Export] private readonly int _jumpSpeed;
     [Export] private readonly int _gravity;
@@ -18,6 +20,7 @@ public class Player : KinematicBody2D
     private string _newAnim;
     private string _anim;
     private Vector2 _velocity = new Vector2();
+    private int _lives;
 
     public override void _Ready()
     {
@@ -41,6 +44,16 @@ public class Player : KinematicBody2D
         Position = pos;
         Show();
         ChangeState(STATE.IDLE);
+        _lives = 3;
+        EmitSignal("LifeChanged", _lives);
+    }
+
+    private void Hurt()
+    {
+        if (_state != STATE.HURT)
+        {
+            ChangeState(STATE.HURT);
+        }
     }
 
     private void GetInput()
@@ -85,7 +98,7 @@ public class Player : KinematicBody2D
         if (_state == STATE.JUMP && _velocity.y > 0) _newAnim = "jump_down";
     }
 
-    private void ChangeState(STATE newState)
+    private async void ChangeState(STATE newState)
     {
         _state = newState;
         switch (_state)
@@ -98,11 +111,22 @@ public class Player : KinematicBody2D
                 break;
             case STATE.HURT:
                 _newAnim = "hurt";
+                _velocity.x = -100 * Math.Sign(_velocity.x);
+                _velocity.y = -200;
+                _lives -= 1;
+                EmitSignal("LifeChanged", _lives);
+                await ToSignal(GetTree().CreateTimer(0.5f), "timeout");
+                ChangeState(STATE.IDLE);
+                if (_lives <= 0)
+                {
+                    ChangeState(STATE.DEAD);
+                }
                 break;
             case STATE.JUMP:
                 _newAnim = "jump_up";
                 break;
             case STATE.DEAD:
+                EmitSignal("Dead");
                 Hide();
                 break;
         }
