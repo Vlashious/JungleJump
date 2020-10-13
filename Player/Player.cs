@@ -36,6 +36,13 @@ public class Player : KinematicBody2D
         _velocity = MoveAndSlide(_velocity, Vector2.Up);
     }
 
+    public void Start(Vector2 pos)
+    {
+        Position = pos;
+        Show();
+        ChangeState(STATE.IDLE);
+    }
+
     private void GetInput()
     {
         if (_state == STATE.HURT) return;
