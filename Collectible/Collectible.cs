@@ -14,9 +14,9 @@ public class Collectible : Area2D
     {
         GetNode<Sprite>("Sprite").Texture = GD.Load(textures[type]) as Texture;
         Position = pos;
-        GetNode<Area2D>("Collectible").Connect("body_entered", this, "OnBodyEntered");
+        Connect("body_entered", this, "OnBodyEntered");
     }
-    private void OnBodyEntered()
+    private void OnBodyEntered(Node body)
     {
         EmitSignal("Pickup");
         QueueFree();
