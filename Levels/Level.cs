@@ -22,8 +22,8 @@ public class Level : Node2D
     {
         var mapSize = GetNode<TileMap>("World").GetUsedRect();
         var cellSize = GetNode<TileMap>("World").CellSize;
-        // GetNode<Camera2D>("Player/Camera2D").LimitLeft = (int)((mapSize.Position.x - 5) * cellSize.x);
-        // GetNode<Camera2D>("Player/Camera2D").LimitRight = (int)((mapSize.Position.x - 5) * cellSize.x);
+        GetNode<Camera2D>("Player/Camera2D").LimitLeft = (int)((mapSize.Position.x - 5) * cellSize.x);
+        GetNode<Camera2D>("Player/Camera2D").LimitRight = (int)((mapSize.End.x + 5) * cellSize.x);
     }
 
     private void SpawnPickups()
