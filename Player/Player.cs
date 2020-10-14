@@ -57,7 +57,7 @@ public class Player : KinematicBody2D
         EmitSignal("LifeChanged", _lives);
     }
 
-    private void Hurt()
+    public void Hurt()
     {
         if (_state != STATE.HURT)
         {
