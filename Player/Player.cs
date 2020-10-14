@@ -37,6 +37,15 @@ public class Player : KinematicBody2D
             GetNode<AnimationPlayer>("AnimationPlayer").Play(_anim);
         }
         _velocity = MoveAndSlide(_velocity, Vector2.Up);
+        if (_state == STATE.HURT) return;
+        for (int i = 0; i < GetSlideCount(); i++)
+        {
+            var collision = GetSlideCollision(i);
+            if ((string)collision.Collider.Get("name") == "Danger")
+            {
+                Hurt();
+            }
+        }
     }
 
     public void Start(Vector2 pos)

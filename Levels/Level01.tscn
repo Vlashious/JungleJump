@@ -15,6 +15,9 @@ tile_data = PoolIntArray( 1245209, 5, 0, 1507345, 6, 0, 1966107, 5, 0, 2162696, 
 [node name="Pickups" parent="." index="3"]
 tile_data = PoolIntArray( 196648, 8, 0, 327718, 7, 0, 327722, 7, 0, 327726, 7, 0, 458796, 8, 0, 786449, 7, 0, 852006, 8, 0, 983056, 8, 0, 983058, 8, 0, 1376294, 8, 0 )
 
+[node name="Danger" parent="." index="4"]
+tile_data = PoolIntArray( 1703953, 0, 0, 2162703, 0, 0, 2162725, 0, 0 )
+
 [node name="Player" parent="." index="5"]
 _runSpeed = 100
 _jumpSpeed = 170
