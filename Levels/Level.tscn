@@ -16,7 +16,7 @@ scale = Vector2( 1, 1.2 )
 transform = Transform2D( 1, 0, 0, 1.2, 0, 0 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.1, 0.1 )
+motion_scale = Vector2( 0.1, 1 )
 motion_mirroring = Vector2( 576, 0 )
 __meta__ = {
 "_edit_group_": true
@@ -28,7 +28,7 @@ texture = ExtResource( 6 )
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.4, 0.1 )
+motion_scale = Vector2( 0.4, 1 )
 motion_mirroring = Vector2( 880, 0 )
 __meta__ = {
 "_edit_group_": true

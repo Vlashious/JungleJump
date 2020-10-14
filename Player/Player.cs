@@ -41,9 +41,24 @@ public class Player : KinematicBody2D
         for (int i = 0; i < GetSlideCount(); i++)
         {
             var collision = GetSlideCollision(i);
-            if ((string)collision.Collider.Get("name") == "Danger")
+            Node collider = collision.Collider as Node;
+            if ((string)collider.Get("name") == "Danger")
             {
                 Hurt();
+            }
+            if (collider is Enemy e)
+            {
+                var playerFeet = (Position + (Vector2)GetNode<CollisionShape2D>("CollisionShape2D").Shape.Get("extents")).y;
+                if (playerFeet < e.Position.y)
+                {
+                    GD.Print("heh");
+                    e.TakeDamage();
+                    _velocity.y = -200;
+                }
+                else
+                {
+                    Hurt();
+                }
             }
         }
     }

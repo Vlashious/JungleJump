@@ -33,4 +33,17 @@ public class Enemy : KinematicBody2D
             QueueFree();
         }
     }
+
+    public void TakeDamage()
+    {
+        GetNode<AnimationPlayer>("AnimationPlayer").Play("death");
+        GetNode<AnimationPlayer>("AnimationPlayer").Connect("animation_finished", this, "OnAnimFinished");
+        GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
+        SetPhysicsProcess(false);
+    }
+
+    private void OnAnimFinished(string name)
+    {
+        if (name == "death") QueueFree();
+    }
 }
