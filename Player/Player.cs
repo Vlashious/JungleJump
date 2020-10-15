@@ -51,7 +51,6 @@ public class Player : KinematicBody2D
                 var playerFeet = (Position + (Vector2)GetNode<CollisionShape2D>("CollisionShape2D").Shape.Get("extents")).y;
                 if (playerFeet < e.Position.y)
                 {
-                    GD.Print("heh");
                     e.TakeDamage();
                     _velocity.y = -200;
                 }
